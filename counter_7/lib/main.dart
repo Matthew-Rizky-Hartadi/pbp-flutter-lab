@@ -50,7 +50,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String _text = "EVEN";
-  MaterialColor _color = Colors.blue;
+  MaterialColor _color = Colors.red;
   bool _isVisible = false;
 
   void _incrementCounter() {
@@ -86,11 +86,11 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       if (_counter % 2 == 1) {
         _text = "ODD";
-        _color = Colors.red;
+        _color = Colors.blue;
       }
       else {
         _text = "EVEN";
-        _color = Colors.blue;
+        _color = Colors.red;
       }
     });
   }
