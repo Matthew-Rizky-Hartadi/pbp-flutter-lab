@@ -83,18 +83,16 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _info() {
-    if (_counter % 2 == 1) {
-      setState(() {
+    setState(() {
+      if (_counter % 2 == 1) {
         _text = "ODD";
         _color = Colors.red;
-      });
-    }
-    else {
-      setState(() {
+      }
+      else {
         _text = "EVEN";
         _color = Colors.blue;
-      });
-    }
+      }
+    });
   }
 
   @override
