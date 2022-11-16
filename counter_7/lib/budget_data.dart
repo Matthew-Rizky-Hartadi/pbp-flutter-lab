@@ -89,8 +89,6 @@ class _MyDataPageState extends State<MyDataPage> {
                 )
               ),
             )
-
-
         ]
       )
     );

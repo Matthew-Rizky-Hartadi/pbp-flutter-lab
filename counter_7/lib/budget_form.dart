@@ -138,6 +138,7 @@ class _MyFormPageState extends State<MyFormPage> {
                         )
                     ),
                     value: choose,
+                    underline: const SizedBox(),
                     icon: const Icon(Icons.keyboard_arrow_down),
                     items: type.map((String items) {
                       return DropdownMenuItem(
@@ -172,8 +173,15 @@ class _MyFormPageState extends State<MyFormPage> {
                         setState(() {
                           dateTime = date;
                         });
-                      }) ;
+                      });
+                      (String? value) {
+                      if (value == null || value.isEmpty) {
+                      return 'Amount cannot be empty!';
+                      }
+                      return null;
+                      };
                     },
+
                   ),
                 ],
               ),
@@ -203,7 +211,6 @@ class _MyFormPageState extends State<MyFormPage> {
                         //   builder: (context) => MyDataPage(budgetData: budgetData)
                         // ));
                       }
-                      print(budgetData);
                     },
                     child: const Padding(
                       padding: EdgeInsets.all(8.0),
