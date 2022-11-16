@@ -13,10 +13,10 @@ class Data {
 }
 class _MyFormPageState extends State<MyFormPage> {
   final _formKey = GlobalKey<FormState>();
-  String title = "Income";
+  String? title = "Income";
   int amount = 0;
   List budgetData = [];
-  String choose = "Income";
+  String? choose;
   List<String> type = ['Income', 'Expense'];
   DateTime? dateTime;
 
@@ -147,7 +147,7 @@ class _MyFormPageState extends State<MyFormPage> {
                     }).toList(),
                     onChanged: (String? newValue) {
                       setState(() {
-                        choose = newValue!;
+                        choose = newValue ?? "";
                       });
                     },
                   ),

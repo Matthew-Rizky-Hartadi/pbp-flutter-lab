@@ -10,8 +10,6 @@ class MyDataPage extends StatefulWidget {
 }
 
 class _MyDataPageState extends State<MyDataPage> {
-  var list = ["one", "two", "three", "four"];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
