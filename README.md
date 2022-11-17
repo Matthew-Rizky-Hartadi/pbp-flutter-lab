@@ -85,6 +85,20 @@ Center -> Centers the child within itself.
 
 TextFormField -> Widget that wraps a TextField widget in a FormField.
 
+Card -> Widget with bland space or panel with round corners and a slight elevation on the lower side. It comes with many properties like color, shape, shadow color, etc which lets developers customize.
+
+SingleChildScrollView -> A box in which a single widget can be scrolled.
+
+ListTile -> A list tile contains one to three lines of text optionally flanked by icons or other widgets, such as check boxes. The icons (or other widgets) for the tile are defined with the leading and trailing parameters.
+
+Icon -> A graphical icon widget drawn with a glyph from a font described in an IconData such as material's predefined IconDatas in Icons.
+
+Navigator -> A widget that manages a set of child widgets with a stack discipline.
+
+DropDownButton -> A Material Design button for selecting from a list of items.
+
+FloatingActionButton -> A circular icon button that hovers over content to promote a primary action in the application.
+
 ## Events in Flutter
 
 There are a lot of events that exists in flutter. Some of them are PointerDownEvent, PointerMoveEvent, PointerUpEvent, PointerCancelEvent. Gestures can also dispatch multiple events, such as onTap, onTapDown, onTapUp, onHover, onFocusChange, onDoubleTap, onPressed, onLongPress, onHover, onVerticalDragStart, onHorizontalDragStart, onPanStart, and many more.
