@@ -207,9 +207,9 @@ class _MyFormPageState extends State<MyFormPage> {
                         childData.add(choose);
                         childData.add(dateTime);
                         Data.budgetData.add(childData);
-                        // Navigator.pushReplacement(context, MaterialPageRoute(
-                        //   builder: (context) => MyDataPage(budgetData: budgetData)
-                        // ));
+                        Navigator.pushReplacement(context, MaterialPageRoute(
+                          builder: (context) => const MyFormPage()
+                        ));
                       }
                     },
                     child: const Padding(
