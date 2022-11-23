@@ -122,7 +122,7 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
                                   "${snapshot.data![index].title}",
                                   style: const TextStyle(
                                     fontSize: 18.0,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w400
                                   ),
                                 ),
                               ],

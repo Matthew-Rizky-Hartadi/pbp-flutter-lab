@@ -83,7 +83,7 @@ class _DetailsPageState extends State<DetailsPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('${widget.title}',
-                style: const TextStyle(fontSize:22, fontWeight: FontWeight.bold)),
+                style: const TextStyle(fontSize:23, fontWeight: FontWeight.w700)),
               ],
             ),
           ),
@@ -175,7 +175,7 @@ class _DetailsPageState extends State<DetailsPage> {
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.blue,
-              minimumSize: Size.fromHeight(40),
+              minimumSize: const Size.fromHeight(40),
             ),
             onPressed: () {
               Navigator.pop(context);
