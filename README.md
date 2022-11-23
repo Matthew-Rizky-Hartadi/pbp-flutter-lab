@@ -161,7 +161,51 @@ When saved, the data will be put in a list, which will be added to another list 
 
 In the budget data dart file, created cards containing the information saved from the budget form dart file by iterating through the list from the Data class in the budget form dart file.
 
+# Assignment 9
 
+## Retrieving JSON data
+It is possible to retrieve JSON data without making a model first. Using the jsonDecode() function, you can decode the JSON dta with the JSON string as the method argument. IT returns a Map<String, dynamic> meaning that the value types are unknown until runtime. You lose most of the statically typed language features: type safety, autocompletion and most importantly, compile-time exceptions. Your code will become instantly more error-prone.
 
+## Widgets
+Container -> Creates a rectangular visual element which can have margins, padding, constraint, and can be decoratd with a BoxDecoration such as a bckground, a border, or a shadow
+
+Row, Column -> Create flexible layouts in both the horizontal (Row) and vertical (Column) directions. The design of these objects is based on the web’s flexbox layout model.
+
+Text -> Creates a run of styled text
+
+AppBar -> Consists of a toolbar and potentially other widgets
+
+Drawer -> A Material Design panel that slides in horizontally from the edge of a Scaffold to show navigation links in an application.
+
+Scaffold -> Implements the basic Material Design visual layout structure. This class provides APIs for showing drawers, snack bars, and bottom sheets.
+
+Padding -> Widget that insets its child by the given padding.
+
+Card -> Widget with bland space or panel with round corners and a slight elevation on the lower side. It comes with many properties like color, shape, shadow color, etc which lets developers customize.
+
+ListTile -> A list tile contains one to three lines of text optionally flanked by icons or other widgets, such as check boxes. The icons (or other widgets) for the tile are defined with the leading and trailing parameters.
+
+FloatingActionButton -> A circular icon button that hovers over content to promote a primary action in the application.
+
+ElevatedButton -> An elevated button is a label child displayed on a Material widget whose Material.elevation increases when the button is pressed.
+
+TextSpan -> An immutable span of text that has a style property to give style to the text. It is also having children property to add more text to this widget and give style to the children.
+
+RichText -> The RichText widget displays text that uses multiple different styles. The text to display is described using a tree of TextSpan objects, each of which has an associated style that is used for that subtree.
+
+Wrap -> A widget that displays its children in multiple horizontal or vertical runs.
+
+FutureBuilder -> Widget that builds itself based on the latest snapshot of interaction with a Future.
+
+ListView.builder -> Takes an IndexedWidgetBuilder, which builds the children on demand. This constructor is appropriate for list views with a large (or infinite) number of children because the builder is called only for those children that are actually visible.
+
+## JSON to FLutter Data Retrieving Mechanism
+Firstly, we need to create a model for the JSON data which can be obtained from several websites such as Quicktype, and add it to a dart file. Next we need to add the http package to perform the HTTP request. Run the command 'flutter pub add http'  on the project terminal to add it and add '<uses-permission android:name="android.permission.INTERNET" />' after the applicaiton tag in the ANdroidManifest.xml to alow for internet access.
+
+In the page you want to retrieve the data, import the http package, dart:convert, and the model dart file. Create a stateful widget ,and get the JSON data using th eFUture widget and http.get using the url containing the data. Convert the data using the fromJson method of the model class and add it to a list.
+
+To display the data, use the FutureBuilder function with the future being the function fething the data and for the builder, create the data representation using ListView.builder.
+
+## Implementation
 
 
