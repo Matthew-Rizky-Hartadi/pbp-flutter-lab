@@ -130,7 +130,11 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context)  => DetailsPage(rating: snapshot.data![index].rating,releaseDate: snapshot.data![index].releaseDate, review: snapshot.data![index].review, title: snapshot.data![index].title, watched: snapshot.data![index].watched)
+                              MaterialPageRoute(builder: (context)  => DetailsPage(rating: snapshot.data![index].rating,
+                                  releaseDate: snapshot.data![index].releaseDate,
+                                  review: snapshot.data![index].review,
+                                  title: snapshot.data![index].title,
+                                  watched: snapshot.data![index].watched)
                             ));
                           }
                         ),
