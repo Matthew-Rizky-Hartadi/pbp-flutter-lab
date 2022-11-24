@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import "package:counter_7/page/budget_data.dart";
-import "package:counter_7/page/budget_form.dart";
-import "package:counter_7/page/mywatchlist_page.dart";
-import 'package:counter_7/main.dart';
+import 'package:counter_7/page/drawer.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage ({Key? key, required this.watched,
@@ -28,53 +25,7 @@ class _DetailsPageState extends State<DetailsPage> {
       appBar: AppBar(
         title: const Text('Detail')
       ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // Adding clickable menu
-            ListTile(
-              title: const Text('Counter'),
-              onTap: () {
-                // Route the menu to the main page
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyApp()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Form'),
-              onTap: () {
-                // Route the menu to the form page
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyFormPage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Budget Data'),
-              onTap: () {
-                // Route the menu to the to do page
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyDataPage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('My Watch List'),
-              onTap: () {
-                // Route the menu to the to do page
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyWatchListPage()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: displayDrawer.display(context),
       body: Column(
         children:[
           Padding(

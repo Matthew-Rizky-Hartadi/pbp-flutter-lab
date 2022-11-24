@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:counter_7/model/mywatchlist.dart';
-import "package:counter_7/page/budget_data.dart";
-import "package:counter_7/page/budget_form.dart";
 import "package:counter_7/page/details.dart";
-import 'package:counter_7/main.dart';
+import 'package:counter_7/page/drawer.dart';
 
 class MyWatchListPage extends StatefulWidget {
   const MyWatchListPage({Key? key}) : super(key: key);
@@ -73,53 +71,7 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
         appBar: AppBar(
           title: const Text('My Watch List'),
         ),
-        drawer: Drawer(
-          child: Column(
-            children: [
-              // Adding clickable menu
-              ListTile(
-                title: const Text('Counter'),
-                onTap: () {
-                  // Route the menu to the main page
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MyApp()),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text('Form'),
-                onTap: () {
-                  // Route the menu to the form page
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MyFormPage()),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text('Budget Data'),
-                onTap: () {
-                  // Route the menu to the to do page
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MyDataPage()),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text('My Watch List'),
-                onTap: () {
-                  // Route the menu to the to do page
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MyWatchListPage()),
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
+        drawer: displayDrawer.display(context),
         body: FutureBuilder(
             future: fetchToDo(),
             builder: (context, AsyncSnapshot snapshot) {
@@ -143,7 +95,6 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
                       itemCount: snapshot.data!.length,
                       itemBuilder: (_, index)=> Card(
                         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-
                         child: ListTile(
                           title: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
