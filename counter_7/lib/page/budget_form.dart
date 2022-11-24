@@ -19,6 +19,13 @@ class _MyFormPageState extends State<MyFormPage> {
   List<String> type = ['Income', 'Expense'];
   DateTime? dateTime;
 
+  buttonColor() {
+    if(dateTime == null) {
+      return MaterialStateProperty.all(Colors.blueGrey.shade600);
+    } else {
+      return MaterialStateProperty.all(Colors.green);
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,7 +124,7 @@ class _MyFormPageState extends State<MyFormPage> {
                   ),
                   TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.blueGrey.shade600),
+                      backgroundColor: buttonColor(),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.all(8.0),
@@ -137,7 +144,7 @@ class _MyFormPageState extends State<MyFormPage> {
                           dateTime = date;
                         });
                       });
-                      (String? value) {
+                      validator: (String? value) {
                       if (value == null || value.isEmpty) {
                       return 'Amount cannot be empty!';
                       }
@@ -163,7 +170,7 @@ class _MyFormPageState extends State<MyFormPage> {
                       backgroundColor: MaterialStateProperty.all(Colors.blue),
                     ),
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {
+                      if (_formKey.currentState!.validate() && dateTime != null) {
                         var childData = [];
                         childData.add(title);
                         childData.add(amount);
