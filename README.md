@@ -207,5 +207,45 @@ In the page you want to retrieve the data, import the http package, dart:convert
 To display the data, use the FutureBuilder function with the future being the function fething the data and for the builder, create the data representation using ListView.builder.
 
 ## Implementation
+<img width="134" alt="image" src="https://user-images.githubusercontent.com/112454126/203665385-8575489a-03c3-46b1-8601-1bda2fcd1ce1.png">
+Create a dart file to contain the model.
+
+<img width="396" alt="image" src="https://user-images.githubusercontent.com/112454126/203665498-efba1e47-501d-43c0-a14e-68080c11bd72.png">
+Create a model for the JSON data inside the new dart file.
+
+<img width="130" alt="image" src="https://user-images.githubusercontent.com/112454126/203666006-06bf0e7b-f96b-424e-8a37-297e850b3b13.png">
+Create two dart files for the watchlist page and the details page.
+
+<img width="223" alt="image" src="https://user-images.githubusercontent.com/112454126/203666079-c0d5e64a-f079-49a7-907e-85e0b76e7750.png">
+Import the necessary packages inside the watchlist page.
+
+<img width="372" alt="image" src="https://user-images.githubusercontent.com/112454126/203666120-2f19e6d4-431b-433d-b2b9-f11eb2acded7.png">
+Create a class MyWatchListPage and using the Future widget, fetch the JSON data form the url using http.get. Decode the response to JSON form and add the necessary data to a list.
+
+<img width="402" alt="image" src="https://user-images.githubusercontent.com/112454126/203666288-ae338361-e69c-468d-b25a-330480e7d998.png">
+
+<img width="471" alt="image" src="https://user-images.githubusercontent.com/112454126/203666387-feca2e0e-2160-471e-a633-7efb957471e7.png">
+In the body of the app, use the FutureBuilder widget with the future being the fnction fetching the data. In the builder, use AsyncSnapshot and check whether the snapshot has the data. If it doesn't have the data, return a message. If the data exists, use the return a ListView.builder with the itemcount the length of the data and the itembuilder using cards to represent the title of the movies.
+
+<img width="370" alt="image" src="https://user-images.githubusercontent.com/112454126/203666977-2984b6ac-39c8-4300-8379-0013af78eeb2.png">
+Use a ListTile widget as the child of the card and for the onTap event, use Navigator.push to push the details page containing the corresponding data of the watchlist.
+
+<img width="297" alt="image" src="https://user-images.githubusercontent.com/112454126/203667167-edacf31e-6d4c-4686-858f-0ce872c63493.png">
+In the details dart file, import the necessary packages and make a Stateful widget with the variables that will hold the value passed from the watchlist page.
+
+<img width="462" alt="image" src="https://user-images.githubusercontent.com/112454126/203667416-d6107b3a-663c-4799-a2ed-c1a787ecfbd7.png">
+
+<img width="485" alt="image" src="https://user-images.githubusercontent.com/112454126/203667443-cef503f3-8ce1-4136-8264-4a5ee5896a4e.png">
+
+<img width="413" alt="image" src="https://user-images.githubusercontent.com/112454126/203667503-e0d2759b-d0b9-485b-8549-81f9f2e6ec25.png">
+
+<img width="334" alt="image" src="https://user-images.githubusercontent.com/112454126/203667520-dcc796ba-01bc-4690-90d5-0153a3e06f88.png">
+
+In the body of the app, make the title of the movie in the top center using the Row widget, and make it bold. For the remaining details, use the Row widget to make it at the start and use the RichText, TextSpan widgets to make some of the texts bold. Lastly make a back button using the floatingActionButton widget and in the onPressed event, pop the page to go back to the watchlist page.
+
+
+
+
+
 
 
