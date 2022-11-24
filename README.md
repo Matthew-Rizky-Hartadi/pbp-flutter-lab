@@ -243,6 +243,24 @@ In the details dart file, import the necessary packages and make a Stateful widg
 
 In the body of the app, make the title of the movie in the top center using the Row widget, and make it bold. For the remaining details, use the Row widget to make it at the start and use the RichText, TextSpan widgets to make some of the texts bold. Lastly make a back button using the floatingActionButton widget and in the onPressed event, pop the page to go back to the watchlist page.
 
+## Bonus
+<img width="147" alt="image" src="https://user-images.githubusercontent.com/112454126/203689908-df59cba4-2abe-4d17-9bfe-440867845870.png">
+Created function checkStatus to set the value for checkbox from string to boolean. 
+
+Created function convert to switch the value of the watched for the onChanged event of the checkbox.
+
+Created the BorderColor function to set the color for the border according to the status of watched.
+
+<img width="306" alt="image" src="https://user-images.githubusercontent.com/112454126/203690095-5a2bd8f6-d92d-4924-94a8-a93fe54be5e4.png">
+Created Checkbox for each of the watchlist with the value of the status being watched or not watched and the vorder color green for watched and red for not watched.
+
+<img width="406" alt="image" src="https://user-images.githubusercontent.com/112454126/203690211-40a65181-5b58-4f2c-b206-2a003a20a28f.png">
+
+<img width="362" alt="image" src="https://user-images.githubusercontent.com/112454126/203690228-b63d6c05-0d86-4b9b-a2c0-4fdc369f5469.png">
+Created a drawer dart file that contains the drawer for other dart file pages.
+
+<img width="155" alt="image" src="https://user-images.githubusercontent.com/112454126/203690330-e822dca8-6f4d-4ff1-8309-3faa7e788acc.png">
+Replaced each drawer inside of each page with the created drawer dart file.
 
 
 
