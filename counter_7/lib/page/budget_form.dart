@@ -144,12 +144,6 @@ class _MyFormPageState extends State<MyFormPage> {
                           dateTime = date;
                         });
                       });
-                      validator: (String? value) {
-                      if (value == null || value.isEmpty) {
-                      return 'Amount cannot be empty!';
-                      }
-                      return null;
-                      };
                     },
 
                   ),
