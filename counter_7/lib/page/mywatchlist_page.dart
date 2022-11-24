@@ -104,7 +104,8 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
                                   "${snapshot.data![index].title}",
                                   style: const TextStyle(
                                     fontSize: 18.0,
-                                    fontWeight: FontWeight.w400
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ],
@@ -118,9 +119,9 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
                                 }
                             ),
                             shape: RoundedRectangleBorder(
-                              side: BorderSide(color: BorderColor(snapshot.data![index].watched)),
                               borderRadius: BorderRadius.circular(5),
                             ),
+                          tileColor: BorderColor(snapshot.data![index].watched),
                           onTap: () {
                             Navigator.push(
                               context,

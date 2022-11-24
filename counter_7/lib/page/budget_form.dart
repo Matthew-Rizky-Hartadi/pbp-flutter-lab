@@ -144,7 +144,7 @@ class _MyFormPageState extends State<MyFormPage> {
                           dateTime = date;
                         });
                       });
-                    },
+                    }
 
                   ),
                 ],
