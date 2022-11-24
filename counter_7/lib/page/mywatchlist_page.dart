@@ -15,6 +15,7 @@ class MyWatchListPage extends StatefulWidget {
 }
 
 class _MyWatchListPageState extends State<MyWatchListPage> {
+
   Future<List<MyWatchList>> fetchToDo() async {
     var url = Uri.parse('https://pbp-assignment-2-matthew.herokuapp.com/mywatchlist/json/');
     http.Response response = await http.get(
@@ -34,6 +35,36 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
       }
     }
     return listMyWatchList;
+  }
+
+  bool status = false;
+  checkStatus(String status1) {
+
+      if (status1 == 'watched') {
+        status = true;
+      } else {
+        status =  false;
+      }
+
+    return status;
+  }
+
+  String convert(String status2) {
+    String switch1 = "";
+    if (status2 == "watched") {
+      switch1 = 'not watched';
+    } else {
+      switch1 = 'watched';
+    }
+    return switch1;
+  }
+
+  BorderColor(String watched) {
+    if (watched == 'watched') {
+      return Colors.green;
+    } else {
+      return Colors.red;
+    }
   }
   @override
   Widget build(BuildContext context) {
@@ -126,6 +157,18 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
                                   ),
                                 ),
                               ],
+                            ),
+                            trailing: Checkbox(
+                                value: checkStatus(snapshot.data![index].watched),
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    snapshot.data![index].watched = convert(snapshot.data![index].watched);
+                                  });
+                                }
+                            ),
+                            shape: RoundedRectangleBorder(
+                              side: BorderSide(color: BorderColor(snapshot.data![index].watched)),
+                              borderRadius: BorderRadius.circular(5),
                             ),
                           onTap: () {
                             Navigator.push(
